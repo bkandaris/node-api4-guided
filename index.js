@@ -1,13 +1,12 @@
 require('dotenv').config();
 
-
 const express = require('express');
 const helmet = require('helmet');
 const welcomeRouter = require('./welcome/welcome-router');
 const shoutsRouter = require('./shouts/shouts-router');
 
 const server = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 server.use(helmet());
 server.use(express.json());
